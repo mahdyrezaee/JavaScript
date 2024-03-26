@@ -5,15 +5,20 @@ rl.on('close', () => process.exit(0));
 
 async function execute() {
 
-    const isEven = parseFloat(await prompt("ein zahl: "));
-    if (isEven %2==0){
-        console.log(true);
-    }else {
-        console.log(false);
+    const zahl = parseFloat(await prompt("ein zahl: "));
+    if (isNaN(zahl)) {
+        console.log("nein")
+        return;
     }
-
-
+    isEven(zahl);
 }
+    function isEven(nr) {
+        if (nr % 2 ===0){
+            console.log(true);
+        }else {
+            console.log(false);
+        }
+    }
 
 execute().catch((err) => {
     console.error(err);
