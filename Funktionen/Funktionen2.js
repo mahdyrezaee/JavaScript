@@ -5,14 +5,29 @@ rl.on('close', () => process.exit(0));
 
 async function execute() {
 
-    const isEven = parseFloat(await prompt("ein zahl: "));
-    if (isEven %2==0){
-        console.log(true);
-    }else {
-        console.log(false);
+    // const isEven=a;
+    // if (isEven %2===0){
+    //     console.log(true);
+    //     return;
+    // }else {
+    //     console.log(false);
+    //     return;
+    // }
+    // console.log(execute (a ===55))
+    const isEven=(zahl) =>{
+        isEven1 = zahl %2===0?true : false;
+       // console.log(isEven1);
+        return isEven1;
+        // if (zahl %2===0){
+        //     console.log(true);
+        //     return;
+        // }else {
+        //     console.log(false);
+        //     return;
+        // }
+
     }
-
-
+    console.log( isEven(99));
 }
 
 execute().catch((err) => {
