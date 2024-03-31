@@ -12,19 +12,23 @@ async function execute() {
         ["Fritz" , "Mayr" , 19],
 
     ];
+    // const zahl1 = parseInt( await prompt("line  ? : "));
+    //
+    // const name1 =await prompt("name (Vorname ,Nachname ,Alter) ?: ");
+    // const  zahl2 =name ="Vorname" ,name ="Nachname",name ="Alter"? 0:1:2;
     const zahl1 = parseInt( await prompt("line  ? : "));
 
-    const name =await prompt("name (Vorname ,Nachname ,Alter) ?: ");
-    const  zahl2 =name ="Vorname" ,name ="Nachname",name ="Alter"? 0:1:2;
-    // if (name==="Vorname"){
-    //     console.log(field[zahl1][0]);
-    // }else if(name==="Nachname"){
-    //     console.log(field[zahl1][1]);
-    // }else if(name==="Alter") {
-    //     console.log(field[zahl1][2]);
-    // }else {
-    //     console.log("false");
-    // }
+    const zahl2 =parseInt( await prompt("colum  ?: "));
+
+    if (zahl1===0){
+        const zahl3 = parseInt( await prompt("Zahl bitte : "));
+        field [zahl1][zahl2]=zahl3;
+
+    }else {
+        const name = await prompt("name bitte : ");
+        field [zahl1][zahl2]=name;
+    }
+
 
     console.log(field[zahl1][zahl2]);
 
