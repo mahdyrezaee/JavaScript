@@ -11,6 +11,7 @@ async function execute() {
             (zahl2 >= zahl1 && zahl2 >= zahl3 && zahl2 >= zahl4) ? zahl2 :
                 (zahl3 >= zahl1 && zahl3 >= zahl2 && zahl3 >= zahl4) ? zahl3 : zahl4;
         return grosste;
+
     }
 
 
