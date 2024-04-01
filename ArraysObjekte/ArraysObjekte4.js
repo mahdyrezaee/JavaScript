@@ -6,36 +6,38 @@ rl.on('close', () => process.exit(0));
 async function execute() {
 
     const field = [
-        // ["Vorname" , "Nachname" , "Alter"],
+       //  ["Vorname" , "Nachname" , "Alter"],
         ["Hans" , "Müller" , 22],
         ["Georg" , "Huber" , 37],
         ["Fritz" , "Mayr" , 19],
 
     ];
-    // const zahl1 = parseInt( await prompt("line  ? : "));
-    //
-    // const name1 =await prompt("name (Vorname ,Nachname ,Alter) ?: ");
-    // const  zahl2 =name ="Vorname" ,name ="Nachname",name ="Alter"? 0:1:2;
-    const zahl1 = parseInt( await prompt("line  ? : "));
 
-    const zahl2 =parseInt( await prompt("colum  ?: "));
+    const Srringtonr = {
+        Vorname: 0,
+        Nachname: 1,
+        Alter: 2,
+    };
 
-    if (zahl1===0){
-        const zahl3 = parseInt( await prompt("Zahl bitte : "));
-        field [zahl1][zahl2]=zahl3;
 
-    }else {
-        const name = await prompt("name bitte : ");
-        field [zahl1][zahl2]=name;
+    function check(rowNum, columnName) {
+        const columnIndex = Srringtonr[columnName];
+        if (columnIndex === undefined) {
+            return "Spaltenname nicht gefunden";
+        }
+
+        const rowData = field[rowNum];
+        if (!rowData) {
+            return "Zeilennummer nicht gefunden";
+        }
+
+        return rowData[columnIndex];
     }
 
+    const zeilennummer = 2;
+    const spaltenname = "Nachname";
+    console.log(check(zeilennummer, spaltenname));
 
-    console.log(field[zahl1][zahl2]);
-
-
-
-
-    console.log(field)
 
 }
 
