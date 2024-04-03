@@ -38,7 +38,7 @@ async function execute() {
 
     do {
 
-        console.log(await fragen(wo));
+        await fragen(wo);
         function spielen(wo) {
 
             if (wo === "u") {
@@ -92,7 +92,7 @@ async function execute() {
 
                 }
             }
-            console.log(check(wo));
+            check(wo);
         }
 
         async function check(wo) {
@@ -118,7 +118,7 @@ async function execute() {
 
                 wo = await prompt("Wohin gehts du (u , d , l , r ): und x = aus : ");
             } while (wo !== "u" && wo !== "d" && wo !== "l" && wo !== "r" && wo !== "x");
-            console.log(await spielen(wo));
+            await spielen(wo);
         }
 
     }while (wo !=="x" && map[rowmann][commann] !== "o" );
