@@ -7,8 +7,9 @@ async function execute() {
     // Euer Code kommt hier hinein
     let pasword =222;
     console.log(pasword)
-     const pass = parseFloat (await prompt("Please enter your paasword: "));
-
+    //const pass = parseFloat (await prompt("Please enter your paasword: "));
+   const pass = await prompt("Please enter your paasword: ");
+    //Vielen Dank.ich  tachsche int (222 ===222.0)==>Steing("222" !=="222.0")
     console.log("pass " , pass);
     if (pass === pasword){
         console.log("richtig" );

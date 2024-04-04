@@ -6,31 +6,33 @@ rl.on('close', () => process.exit(0));
 async function execute() {
     const Buchstaben = await prompt("Please enter your Buchstaben: ");
     console.log("Buchstaben ", Buchstaben);
-    switch (Buchstaben) {
-        case 'A':
-        case 'I':
-        case 'E':
-        case 'O':
-        case 'U':
-        case 'Ö':
-        case 'Ü':
-        case 'Ä':
-        case 'Y':
-        case 'a':
-        case 'i':
-        case 'e':
-        case 'o':
-        case 'u':
-        case 'ö':
-        case 'ü':
-        case 'ä':
-        case 'y':
-            console.log("Vokal")
-            break;
-        default:
-            console.log("Konsonant")
 
-    }
+
+        switch (Buchstaben) {
+            case 'A':
+            case 'I':
+            case 'E':
+            case 'O':
+            case 'U':
+            case 'Y':
+            case 'a':
+            case 'i':
+            case 'e':
+            case 'o':
+            case 'u':
+            case 'y':
+                console.log("Vokal")
+                break;
+            default:
+                if (Buchstaben >='a' && Buchstaben <='z' || Buchstaben >='A' && Buchstaben <='Z') {
+                    console.log("Konsonant")
+                }else {
+                    console.log("false")
+                }
+
+
+        }
+
 
 }
 
