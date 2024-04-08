@@ -5,7 +5,7 @@ rl.on('close', () => process.exit(0));
 
 async function execute() {
     // Euer Code kommt hier hinein
-    let pasword =222;
+    let pasword ="222";
     console.log(pasword)
     //const pass = parseFloat (await prompt("Please enter your paasword: "));
    const pass = await prompt("Please enter your paasword: ");
