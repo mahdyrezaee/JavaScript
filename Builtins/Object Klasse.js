@@ -13,13 +13,13 @@ async function execute() {
     console.log(keys);
 
 }
-const obj = {
-    name: 'John',
-    age: 30,
-    city: 'New York'
-};
-
-const jsonFormatted = JSON.stringify(obj, null, 2);
-console.log(jsonFormatted);
+// const obj = {
+//     name: 'John',
+//     age: 30,
+//     city: 'New York'
+// };
+//
+// const jsonFormatted = JSON.stringify(obj, null, 2);
+// console.log(jsonFormatted);
 
 execute().catch((err) => { console.error(err); }).finally(() => rl.close());
