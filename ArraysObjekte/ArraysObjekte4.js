@@ -6,10 +6,10 @@ rl.on('close', () => process.exit(0));
 async function execute() {
 
     const field = [
-       //  ["Vorname" , "Nachname" , "Alter"],
-        ["Hans" , "Müller" , 22],
-        ["Georg" , "Huber" , 37],
-        ["Fritz" , "Mayr" , 19],
+        //  ["Vorname" , "Nachname" , "Alter"],
+        ["Hans", "Müller", 22],
+        ["Georg", "Huber", 37],
+        ["Fritz", "Mayr", 19],
 
     ];
 
@@ -21,22 +21,26 @@ async function execute() {
 
 
     function check(rowNum, columnName) {
-        const columnIndex = Srringtonr[columnName];
-        if (columnIndex === undefined) {
-            return "Spaltenname nicht gefunden";
+        // const row = field[rowNum];
+        if (rowNum < 0 || rowNum > 2) {
+            return "falsch1";
         }
 
-        const rowData = field[rowNum];
-        if (!rowData) {
-            return "Zeilennummer nicht gefunden";
+        const column = Srringtonr[columnName];
+        if (column ===undefined){
+            return "falsch2";
         }
+        // if (column < 0 || column > 2) {
+        //     return "falsch2";
+        // }
 
-        return rowData[columnIndex];
+
+       return field[rowNum][column];
     }
 
-    const zeilennummer = 2;
-    const spaltenname = "Nachname";
-    console.log(check(zeilennummer, spaltenname));
+    const rowNum = 1;
+    const columnName = "Nachname";
+    console.log(check(rowNum, columnName));
 
 
 }

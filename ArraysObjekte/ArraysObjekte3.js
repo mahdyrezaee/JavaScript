@@ -12,10 +12,14 @@ async function execute() {
         ["Fritz" , "Mayr" , 19],
 
     ];
-    const zahl1 = parseInt( await prompt("line  ? : "));
-
-    const zahl2 =parseInt( await prompt("colum  ?: "));
-
+    let zahl1 =0;
+    let zahl2;
+  do {
+        zahl1 = parseInt(await prompt("line  ? : "));
+    }  while (zahl1<0 || zahl1 >=3 )
+    do {
+        zahl2 = parseInt(await prompt("colum  ?: "));
+    }  while (zahl1<0 || zahl1 >=3 )
 
    console.log(field[zahl1][zahl2]);
 

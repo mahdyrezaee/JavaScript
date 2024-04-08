@@ -13,23 +13,23 @@ async function execute() {
 
 
     function check(rowNum, columnName) {
-        const rowData = field[rowNum];
-        if (!rowData) {
-            return "Zeilennummer nicht gefunden";
+       // const row = field[rowNum];
+        if (rowNum < 0 || rowNum > 2) {
+            return "falsch1";
         }
 
-        const value = rowData[columnName];
-        if (value === undefined) {
-            return "Spaltenname nicht gefunden";
+        const value = field[columnName];
+        if (field[rowNum][columnName] ===undefined) {
+            return "falsch2";
         }
 
-        return value;
+        return field[rowNum][columnName];
     }
 
 
-    const zeilennummer = 1;
-    const spaltenname = "Nachname";
-    console.log(getValueByRowAndColumn(zeilennummer, spaltenname));
+    const rowNum = 1;
+    const columnName = "Nacname";
+    console.log(check(rowNum, columnName));
 
 }
 

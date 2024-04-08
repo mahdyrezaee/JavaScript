@@ -8,7 +8,7 @@ async function execute() {
     const woche=["Montag" ,"Dienstag" , "Mitwoch" , "Donnerstag" , "Feitag" , "Samstag" , "Sonntag"]
 
     const zahl = await prompt(" zahl bitte 1-7   :");
-    if (zahl>=1 && zahl <=7 ){
+    if (zahl>=1 && zahl <=7  && zahl % 1 ===0){
         console.log(woche[zahl-1]);
         return;
     }else {
