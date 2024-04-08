@@ -10,13 +10,15 @@ async function execute() {
         console.log("nein")
         return;
     }
-    isEven(zahl);
+    console.log(isEven(zahl));
 }
     function isEven(nr) {
         if (nr % 2 ===0){
-            console.log(true);
+           // console.log(true);
+            return true;
         }else {
-            console.log(false);
+           // console.log(false);
+            return false;
         }
     }
 

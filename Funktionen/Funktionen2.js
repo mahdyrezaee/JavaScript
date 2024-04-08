@@ -27,7 +27,7 @@ async function execute() {
         // }
 
     }
-    console.log( isEven(99));
+    console.log( isEven(3));
 }
 
 execute().catch((err) => {
