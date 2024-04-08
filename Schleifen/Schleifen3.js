@@ -15,10 +15,10 @@ async function execute() {
     let nr2;
     do {
         nr2 = parseInt(await prompt("Please enter your nr2:  "));
-        if (nr1 >= nr2){
+        if (nr1 > nr2){
             console.log(" nr1 ist gross ");
         }
-        if (nr1 <= nr2){
+        if (nr1 < nr2){
             console.log(" nr1 ist klein ");
         }
         grlegenheit +=1;
