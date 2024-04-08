@@ -22,18 +22,23 @@ async function execute() {
     do {
         commann = Math.floor(Math.random() * 5) + 1;
         rowmann = Math.floor(Math.random() * 5) + 1;
-
-    } while (map[rowmann][commann] === "y" );
-    map[rowmann][commann]="x";
-    console.log(rowmann+ "+"+commann);
+        // if (map[rowmann][commann] === "y") {
+        //
+        // }
+    } while (map[rowmann][commann] === "█") ;
+    const p={x:rowmann,y:commann};
+    map [p.x][p.y] ="x"
+    console.log(rowmann + "+" + commann);
     let com;
     let row;
     do {
         com = Math.floor(Math.random() * 5) + 1;
         row = Math.floor(Math.random() * 5) + 1;
 
-    } while (map[row][com] === "y" && map[row][com] === "x" );
-   map[row][com]="o"
+    } while (map[row][com] === "█" && map[row][com] === "x");
+    const  s={x:row,y:com}
+    //   const o={x:rowmann,y:commann};
+    map [s.x][s.y] ="o"
 
     let wo = " ";
     do {
@@ -43,49 +48,49 @@ async function execute() {
         wo = await prompt("Wohin gehts du (u , d , l , r ): und x = aus : ");
 
         if (wo === "u") {
-            if (map[rowmann - 1][commann] === "█") {
+            if (map[p.x - 1][p.y] === "█") {
 
-            } else if (map[rowmann - 1][commann] === "o") {
-                map[rowmann][commann] = "o"
+            } else if (map[p.x - 1][p.y] === "o") {
+                map[p.x][p.y] = "o"
             } else {
-                map[rowmann][commann] = "_";
-                rowmann = rowmann - 1;
-                map[rowmann][commann] = "x"
+                map[p.x][p.y] = "_";
+                p.x = p.x - 1;
+                map[p.x][p.y] = "x"
             }
         } else if (wo === "d") {
 
-            if (map[rowmann + 1][commann] === "█") {
+            if (map[p.x + 1][p.y] === "█") {
 
-            }else if (map[rowmann + 1][commann] === "o") {
-                map[rowmann][commann] = "o"
+            }else if (map[p.x + 1][p.y] === "o") {
+                map[p.x][p.y] = "o"
             } else {
-                map[rowmann][commann] = "_";
-                rowmann = rowmann + 1;
-                map[rowmann][commann] = "x"
+                map[p.x][p.y] = "_";
+                p.x = p.x + 1;
+                map[p.x][p.y] = "x"
             }
         } else if (wo === "l") {
 
-            if (map[rowmann][commann - 1] === "█") {
+            if (map[p.x][p.y - 1] === "█") {
 
 
-            } else if (map[rowmann][commann - 1] === "o") {
-                map[rowmann][commann] = "o"
+            } else if (map[p.x][p.y - 1] === "o") {
+                map[p.x][p.y] = "o"
             }else {
-                map[rowmann][commann] = "_";
-                commann = commann - 1;
-                map[rowmann][commann] = "x"
+                map[p.x][p.y] = "_";
+                p.y = p.y - 1;
+                map[p.x][p.y] = "x"
             }
         } else if (wo === "r") {
 
-            if (map[rowmann][commann + 1] === "█") {
+            if (map[p.x][p.y + 1] === "█") {
 
 
-            } else if (map[rowmann][commann + 1] === "o") {
-                map[rowmann][commann] = "o"
+            } else if (map[p.x][p.y + 1] === "o") {
+                map[p.x][p.y] = "o"
             } else {
-                map[rowmann][commann] = "_";
-                commann = commann + 1;
-                map[rowmann][commann] = "x"
+                map[p.x][p.y] = "_";
+                p.y = p.y + 1;
+                map[p.x][p.y] = "x"
 
             }
         }else if(wo === "x"){
@@ -97,14 +102,14 @@ async function execute() {
         console.clear();
          if (wo=== "x"){
             console.log(" aus")
-        }else if( map[rowmann][commann] === "o") {
+        }else if( map[p.x][p.y] === "o") {
             console.log(" Du hast gewonnen")
         }else {
             console.log("nochmal ");
 
         }
 
-    } while ( wo!=="x" && map[rowmann][commann] !== "o");
+    } while ( wo!=="x" && map[p.x][p.y] !== "o");
 
 }
 
