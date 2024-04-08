@@ -19,11 +19,12 @@ async function execute() {
     do {
         commann = Math.floor(Math.random() * 5) + 1;
         rowmann = Math.floor(Math.random() * 5) + 1;
-        if (map[rowmann][commann] === "y") {
-
-        }
-    } while (map[rowmann][commann] === "y") ;
-    map[rowmann][commann] = "x";
+        // if (map[rowmann][commann] === "y") {
+        //
+        // }
+    } while (map[rowmann][commann] === "█") ;
+    const p={x:rowmann,y:commann};
+    map [p.x][p.y] ="x"
     console.log(rowmann + "+" + commann);
     let com;
     let row;
@@ -31,8 +32,10 @@ async function execute() {
         com = Math.floor(Math.random() * 5) + 1;
         row = Math.floor(Math.random() * 5) + 1;
 
-    } while (map[row][com] === "y" && map[row][com] === "x");
-    map[row][com] = "o"
+    } while (map[row][com] === "█" && map[row][com] === "x");
+    const  s={x:row,y:com}
+ //   const o={x:rowmann,y:commann};
+    map [s.x][s.y] ="o"
 
     let wo = " ";
 
@@ -43,52 +46,52 @@ async function execute() {
 
             if (wo === "u") {
                 console.log("spielen  : u ");
-                if (map[rowmann - 1][commann] === "█") {
+                if (map[p.x - 1][p.y] === "█") {
 
-                } else if (map[rowmann - 1][commann] === "o") {
-                    map[rowmann][commann] = "o"
+                } else if (map[p.x - 1][p.y] === "o") {
+                    map[p.x][p.y] = "o"
                 } else {
-                    map[rowmann][commann] = "_";
-                    rowmann = rowmann - 1;
-                    map[rowmann][commann] = "x"
+                    map[p.x][p.y] = "_";
+                    p.x = p.x - 1;
+                    map[p.x][p.y] = "x"
                 }
             } else if (wo === "d") {
                 console.log("spielen  : d ");
 
-                if (map[rowmann + 1][commann] === "█") {
+                if (map[p.x + 1][p.y] === "█") {
 
-                } else if (map[rowmann + 1][commann] === "o") {
-                    map[rowmann][commann] = "o"
+                } else if (map[p.x + 1][p.y] === "o") {
+                    map[p.x][p.y] = "o"
                 } else {
-                    map[rowmann][commann] = "_";
-                    rowmann = rowmann + 1;
-                    map[rowmann][commann] = "x"
+                    map[p.x][p.y] = "_";
+                    p.x = p.x + 1;
+                    map[p.x][p.y] = "x"
                 }
             } else if (wo === "l") {
                 console.log("spielen  : l ");
 
-                if (map[rowmann][commann - 1] === "█") {
+                if (map[p.x][p.y - 1] === "█") {
 
 
-                } else if (map[rowmann][commann - 1] === "o") {
-                    map[rowmann][commann] = "o"
+                } else if (map[p.x][p.y - 1] === "o") {
+                    map[p.x][p.y] = "o"
                 } else {
-                    map[rowmann][commann] = "_";
-                    commann = commann - 1;
-                    map[rowmann][commann] = "x"
+                    map[p.x][p.y] = "_";
+                    p.y = p.y - 1;
+                    map[p.x][p.y] = "x"
                 }
             } else if (wo === "r") {
                 console.log("spielen  : r ");
 
-                if (map[rowmann][commann + 1] === "█") {
+                if (map[p.x][p.y + 1] === "█") {
 
 
-                } else if (map[rowmann][commann + 1] === "o") {
-                    map[rowmann][commann] = "o"
+                } else if (map[p.x][p.y + 1] === "o") {
+                    map[p.x][p.y] = "o"
                 } else {
-                    map[rowmann][commann] = "_";
-                    commann = commann + 1;
-                    map[rowmann][commann] = "x"
+                    map[p.x][p.y] = "_";
+                    p.y = p.y + 1;
+                    map[p.x][p.y] = "x"
 
                 }
             }
@@ -101,7 +104,7 @@ async function execute() {
             if (wo === "x") {
                 console.log("du bist rasgekommen")
                 // return "du bist rasgekommen"
-            } else if (map[rowmann][commann] === "o") {
+            } else if (map[p.x][p.y] === "o") {
                 console.log(" Du hast gewonnen")
                 // return " Du hast gewonnen";
             } else {
@@ -121,7 +124,7 @@ async function execute() {
             await spielen(wo);
         }
 
-    }while (wo !=="x" && map[rowmann][commann] !== "o" );
+    }while (wo !=="x" && map[p.x][p.y] !== "o" );
     //  console.log("du bist rasgekommen");
 }
 
