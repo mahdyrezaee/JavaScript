@@ -15,9 +15,9 @@ async function execute() {
     // }
     // console.log(execute (a ===55))
     const isEven=(zahl) =>{
-        isEven1 = zahl %2===0?true : false;
+      //  isEven1 = zahl %2===0?true : false;
        // console.log(isEven1);
-        return isEven1;
+        return zahl %2===0?true : false;
         // if (zahl %2===0){
         //     console.log(true);
         //     return;
