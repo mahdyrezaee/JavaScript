@@ -14,7 +14,7 @@ async function execute() {
    log(12,44,1,2,235,4,5,45,3,4);
 
         function log(...args) {
-            console.log(...args)
+            console.log(args.join(" "))
         }
 
 }
