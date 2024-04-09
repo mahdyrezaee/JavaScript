@@ -1,3 +1,4 @@
+
 const readline = require('readline');
 const rl = readline.createInterface({input: process.stdin, output: process.stdout});
 const prompt = (query) => new Promise((resolve) => rl.question(query, resolve));
@@ -22,13 +23,13 @@ async function execute() {
 
     function check(rowNum, columnName) {
         // const row = field[rowNum];
-        if (rowNum < 0 || rowNum > 2) {
-            return "falsch1";
+        if (rowNum < 0 || rowNum > 2 || rowNum %1 !==0) {
+            return "zahl ist falsch1";
         }
 
         const column = Srringtonr[columnName];
         if (column ===undefined){
-            return "falsch2";
+            return "name ist falsch";
         }
         // if (column < 0 || column > 2) {
         //     return "falsch2";
@@ -38,8 +39,8 @@ async function execute() {
        return field[rowNum][column];
     }
 
-    const rowNum = 1;
-    const columnName = "Nachname";
+    const rowNum = parseFloat(await prompt(" zahl bitte 0-2   :"));
+    const columnName = await prompt(" Name colum bitte (Vorname),(Nachname),(Alter)   :");
     console.log(check(rowNum, columnName));
 
 

@@ -14,21 +14,21 @@ async function execute() {
 
     function check(rowNum, columnName) {
        // const row = field[rowNum];
-        if (rowNum < 0 || rowNum > 2) {
-            return "falsch1";
+        if (rowNum < 0 || rowNum > 2 || rowNum %1 !==0) {
+            return "zahl ist falsch1";
         }
 
         const value = field[columnName];
         if (field[rowNum][columnName] ===undefined) {
-            return "falsch2";
+            return "name ist falsch";
         }
 
         return field[rowNum][columnName];
     }
 
 
-    const rowNum = 1;
-    const columnName = "Nacname";
+    const rowNum = parseFloat(await prompt(" zahl bitte 0-2   :"));
+    const columnName = await prompt(" Name colum bitte (Vorname),(Nachname),(Alter)   :");
     console.log(check(rowNum, columnName));
 
 }
