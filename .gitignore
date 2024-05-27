@@ -44,6 +44,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+#***************************************************************************
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -196,3 +197,4 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/webstorm+all,node
 .idea
+
